@@ -68,8 +68,8 @@ info.addEventListener('click',function(event){
           function addZero(num){
               if(num <= 9){
                   return '0' + num;
-              }else return num;
-          };
+              }else{ return num;}
+          }
 
               hours.textContent = addZero(t.hours);
               minutes.textContent = addZero(t.minutes);
@@ -112,4 +112,21 @@ function showUser(surname, name) {
 	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
 }
 showUser.apply(age,['Kris','Pautova']);
+
+class Options {
+    constructor(height,width,bg,fontDize,textAlign){
+        this.height = height;
+        this.width = width;
+        this.bg = bg;
+        this.fontDize = fontDize;
+        this.textAlign = textAlign;
+    }
+    createDiv() {
+    let obj = document.createElement('div');
+    document.body.appendChild(obj);
+    let param = `height:${this.height}px; width:${this.width}px; background-color:${this.bg}; font-size:${this.fontSize}px; text-align:${this.textAlign}`;
+    obj.style.cssText = param;
+    }
+ }
+const square = new Options(210,310,'green',20,'center');
 });
